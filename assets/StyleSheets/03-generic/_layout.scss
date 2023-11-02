@@ -1,0 +1,8 @@
+.wrapper {
+  width: min(100% - 3rem, 55ch);
+  margin-inline: auto;
+}
+
+.flow > :where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1em);
+}

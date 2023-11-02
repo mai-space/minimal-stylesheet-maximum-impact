@@ -1,0 +1,36 @@
+// Colors
+// Source: Realtimecolors.com or Coloors.com
+
+:root {
+  --color-text: #fff;
+  --color-surface: #fff;
+  --color-primary: #fff;
+  --color-secondary: #fff;
+  --color-accent: #fff;
+
+  --font-size-xs: clamp(0.5625rem, 0.8573rem + -0.3804vw, 0.7813rem);
+  --font-size-sm: clamp(0.7956rem, 0.9868rem + -0.2467vw, 0.9375rem);
+  --font-size-base: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+  --font-size-md: clamp(1.35rem, 1.2663rem + 0.4185vw, 1.5906rem);
+  --font-size-lg: clamp(1.62rem, 1.4011rem + 1.0946vw, 2.2494rem);
+  --font-size-xl: clamp(1.9438rem, 1.5135rem + 2.1511vw, 3.1806rem);
+  --font-size-xxl: clamp(2.3325rem, 1.5795rem + 3.7652vw, 4.4975rem);
+  --font-size-xxxl: clamp(2.7994rem, 1.5611rem + 6.1913vw, 6.3594rem);
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #000;
+    --color-surface: #000;
+    --color-primary: #000;
+    --color-secondary: #000;
+    --color-accent: #000;
+  }
+}
+
+// Font Families
+// Source: Fontpair.co
+
+$font-family-base: 'Helvetica Neue LT Pro, Roboto';
+$font-family-accent: 'Motiva Sans, IBM Plex Sans';
