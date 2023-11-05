@@ -1,4 +1,4 @@
-import '../../node_modules/core-js/stable/promise';
+import 'core-js/stable';
 
 // Types & Interfaces
 type ScriptOptions = {
@@ -26,7 +26,6 @@ const $templates: ObjectOptions = {
 };
 
 const $utilities: ObjectOptions = {
-    lazyload: 'lazyload',
 };
 
 const $scripts: ScriptOptions = {
