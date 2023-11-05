@@ -1,13 +1,15 @@
 module.exports = {
   root: true,
 
-  // allows ESLint to understand TypeScript syntax
-  // converts TypeScript into an ESTree-compatible form so it can be used in ESLint
   parser: '@typescript-eslint/parser',
 
   parserOptions: {
     project: './tsconfig.json',
   },
+
+  ignorePatterns: [
+    '*.js',
+  ],
 
   plugins: [
     '@typescript-eslint',
@@ -19,21 +21,31 @@ module.exports = {
   ],
 
   rules: {
-    "max-len": [
-      "warn",
+    'max-len': [
+      'warn',
       {
-        "code": 200
-      }
+        'code': 350,
+      },
     ],
-    "no-console": [
-      "warn",
+    'no-console': [
+      'warn',
       {
-        "allow": [
-          "error"
-        ]
-      }
+        'allow': [
+          'error',
+          'info',
+        ],
+      },
     ],
-    "no-param-reassign": 0,
-    "no-restricted-exports": 0,
+    'no-param-reassign': 0,
+    'no-restricted-exports': 0,
+    "no-unused-vars": [
+      "warn",
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+    ],
+    "@typescript-eslint/no-use-before-define": [
+      "warn",
+    ],
   }
 };
