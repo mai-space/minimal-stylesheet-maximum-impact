@@ -6,11 +6,15 @@ body {
   font-size: var(--font-size-base);
   line-height: 1.6;
   color: var(--color-text);
+  background-color: var(--color-surface);
+  font-weight: normal;
+  font-style: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-accent);
   line-height: 1.1;
+  font-weight: 800;
 }
 
 h1 {

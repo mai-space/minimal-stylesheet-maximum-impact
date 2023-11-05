@@ -1,16 +1,18 @@
 :root {
   // Colors
-  // Source: Realtimecolors.com or Coloors.com
-  --color-text: #fff;
-  --color-surface: #fff;
-  --color-primary: #fff;
-  --color-secondary: #fff;
-  --color-accent: #fff;
+  // Source: https://realtimecolors.com or https://coloors.com
+  --color-text: #191919;
+  --color-surface: #F3F3F3;
+  --color-primary: #78ACBD;
+  --color-secondary: #9678BD;
+  --color-accent: #B9AB60;
+  --color-warning: #BD7889;
+  --color-success: #78BD85;
 
   // Font Families
-  // Source: Fontpair.co
-  --font-family-base: 'Helvetica Neue LT Pro, Roboto';
-  --font-family-accent: 'Motiva Sans, IBM Plex Sans';
+  // Source: https://fontpair.co
+  --font-family-base: 'Helvetica Neue LT Pro, Roboto, Arial, sans-serif';
+  --font-family-accent: 'Motiva Sans, IBM Plex Sans, Arial, sans-serif';
 
   // Font Sizes
   // Source: https://type-scale.com/
@@ -27,10 +29,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-text: #000;
-    --color-surface: #000;
-    --color-primary: #000;
-    --color-secondary: #000;
-    --color-accent: #000;
+    --color-text: #F3F3F3;
+    --color-surface: #191919;
+    --color-primary: #78ACBD;
+    --color-secondary: #9678BD;
+    --color-accent: #B9AB60;
+    --color-warning: #BD7889;
+    --color-success: #78BD85;
   }
 }
