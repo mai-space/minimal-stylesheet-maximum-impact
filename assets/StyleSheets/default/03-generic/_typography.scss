@@ -3,7 +3,7 @@
 
 body {
   font-family: var(--font-family-base);
-  font-size: var(--font-family-base);
+  font-size: var(--font-size-base);
   line-height: 1.6;
   color: var(--color-text);
 }
@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: var(--font-size-xxxl);
-  --flow-space: 2em;
+  --flow-space: 0.7em;
   @supports (text-wrap: balance) {
     text-wrap: balance;
   }
@@ -23,7 +23,7 @@ h1 {
 
 h2 {
   font-size: var(--font-size-xxl);
-  --flow-space: 1.5em;
+  --flow-space: 0.8em;
   @supports (text-wrap: balance) {
     text-wrap: balance;
   }
@@ -31,7 +31,7 @@ h2 {
 
 h3 {
   font-size: var(--font-size-xl);
-  --flow-space: 1.3em;
+  --flow-space: 0.9em;
   @supports (text-wrap: balance) {
     text-wrap: balance;
   }
@@ -39,7 +39,7 @@ h3 {
 
 h4 {
   font-size: var(--font-size-lg);
-  --flow-space: 1.2em;
+  --flow-space: 1em;
   @supports (text-wrap: balance) {
     text-wrap: balance;
   }

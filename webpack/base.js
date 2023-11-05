@@ -28,6 +28,15 @@ module.exports = {
   },
   plugins: [
     new webpack.ProgressPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        handlebarsLoader: {}
+      }
+    }),
+    new HtmlWebPackPlugin({
+      filename: 'MarkUp/index.html',
+      template: path.resolve(__dirname, '../assets/MarkUp/05-pages/index.hbs')
+    }),
     new MiniCssExtractPlugin({
       filename: 'StyleSheets/[name].min.css',
       chunkFilename: '[name].min.css'

@@ -1,32 +1,24 @@
-import 'core-js/stable';
-
 // Types & Interfaces
 type ScriptOptions = {
-    [key: string]: object
+    [key: string]: object;
 };
 
 type ObjectOptions = {
-    [key: string]: string | any
+    [key: string]: string | any;
 };
 
 // Variables
-const $generic: ObjectOptions = {
-};
+const $generic: ObjectOptions = {};
 
-const $atoms: ObjectOptions = {
-};
+const $atoms: ObjectOptions = {};
 
-const $molecules: ObjectOptions = {
-};
+const $molecules: ObjectOptions = {};
 
-const $organisms: ObjectOptions = {
-};
+const $organisms: ObjectOptions = {};
 
-const $templates: ObjectOptions = {
-};
+const $templates: ObjectOptions = {};
 
-const $utilities: ObjectOptions = {
-};
+const $utilities: ObjectOptions = {};
 
 const $scripts: ScriptOptions = {
     '01-generic': $generic,
@@ -46,14 +38,15 @@ const loadScripts = (folder: string, object: ObjectOptions) => {
 
         const single = document.querySelector<HTMLElement>(`.${key}`);
 
-        if (typeof single !== 'undefined' && single !== null) {
+        if (single !== null) {
             // @ts-ignore
-            import(
-                /* webpackChunkName: '[request]' */
-                `./${folder}/${object[key]}`
-                )
+            import(`./${folder}/${object[key]}`)
                 .then((module) => module.default())
-                .catch((error) => console.error(`Unfortunately the ${object[key]} script throws an error. Complete message: ${error}`));
+                .catch((error) =>
+                    console.error(
+                        `Unfortunately the ${object[key]} script throws an error. Complete message: ${error}`
+                    )
+                );
         }
     });
 };
