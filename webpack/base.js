@@ -8,15 +8,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    'service-worker': "../assets/JavaScripts/01-generic/service-worker.ts",
     'bundle': [
-      path.resolve(__dirname, '../assets/JavaScripts/index.ts'),
-      path.resolve(__dirname, '../assets/StyleSheets/bundle.scss')
+      path.resolve(__dirname, '../assets/JavaScripts/default/index.ts'),
+      path.resolve(__dirname, '../assets/StyleSheets/default/bundle.sass')
     ]
   },
   resolve: {
     extensions: [
-      '.ts', '.js',
+      '.ts', '.js', '.json', '.scss', '.sass', '.css'
     ],
     modules: [
       'node_modules',

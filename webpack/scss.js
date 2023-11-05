@@ -7,26 +7,15 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.scss$/,
+                test: /\.sass$/,
                 include: [
-                    path.resolve(__dirname, '../../assets/StyleSheets')
+                    path.resolve(__dirname, '../assets/StyleSheets')
                 ],
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            url: false,
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader'
-                    },
-                    {
-                        loader: 'sass-loader'
-                    }
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader'
                 ]
             }
         ]

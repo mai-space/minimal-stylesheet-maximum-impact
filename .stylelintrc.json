@@ -1,0 +1,7 @@
+{
+  "extends": "stylelint-config-recommended-scss",
+  "rules": {
+    "no-invalid-double-slash-comments": null,
+    "no-empty-source": null
+  }
+}

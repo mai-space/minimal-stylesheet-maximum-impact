@@ -1,21 +1,13 @@
 {
-	"compilerOptions": {
-		"moduleResolution": "node",
-		"lib": [
-			"es5",
-			"dom",
-			"es2015"
-		],
-		"module": "es2020",
-		"target": "es5",
-		"noImplicitAny": false,
-		"allowJs": true,
-		"allowSyntheticDefaultImports": true
-	},
-	"include": ["dist/JavaScripts/*"],
-	"exclude": ["node_modules"],
-	"files": [
-		"./assets/JavaScripts/bundle.ts",
-		"./assets/JavaScripts/01-generic/service-worker.ts",
-	]
+  "compilerOptions": {
+    "target": "ES6", // Specify your target ECMAScript version.
+    "module": "ESNext", // Use ES modules.
+    "outDir": "./dist", // Output directory for compiled TypeScript files.
+    "rootDir": "./assets/JavaScripts", // Root directory for your TypeScript source files.
+    "strict": true, // Enable strict type checking.
+    "esModuleInterop": true, // Allows compatibility between CommonJS and ES modules.
+    "forceConsistentCasingInFileNames": true, // Enforce consistent file casing.
+  },
+  "include": ["assets/JavaScripts/**/*.ts"], // List of TypeScript files to include in compilation.
+  "exclude": ["node_modules"] // Directories to exclude from compilation.
 }
