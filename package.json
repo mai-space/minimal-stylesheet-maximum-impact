@@ -23,5 +23,18 @@
   "bugs": {
     "url": "https://github.com/mai-space/minimal-stylesheet-maximum-impact/issues"
   },
-  "homepage": "https://github.com/mai-space/minimal-stylesheet-maximum-impact#readme"
+  "homepage": "https://github.com/mai-space/minimal-stylesheet-maximum-impact#readme",
+  "dependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.4.6",
+    "@sveltejs/vite-plugin-svelte-inspector": "^1.0.4",
+    "autoprefixer": "^10.4.16",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "handlebars": "^4.7.8",
+    "postcss": "^8.4.31",
+    "sass": "^1.69.5",
+    "vite": "^4.5.0",
+    "vite-plugin-handlebars": "^1.6.0",
+    "vite-plugin-sass": "^0.1.0"
+  }
 }
