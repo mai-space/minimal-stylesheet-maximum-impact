@@ -18,7 +18,9 @@ const $organisms: ObjectOptions = {};
 
 const $templates: ObjectOptions = {};
 
-const $utilities: ObjectOptions = {};
+const $utilities: ObjectOptions = {
+    'no-js': 'no-js',
+};
 
 const $scripts: ScriptOptions = {
     '01-generic': $generic,
