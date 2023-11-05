@@ -7,7 +7,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.scss$/,
+                test: /\.sass$/,
                 include: [
                     path.resolve(__dirname, '../assets/StyleSheets')
                 ],

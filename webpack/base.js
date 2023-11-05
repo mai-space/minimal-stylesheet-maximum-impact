@@ -10,7 +10,7 @@ module.exports = {
   entry: {
     'bundle': [
       path.resolve(__dirname, '../assets/JavaScripts/default/index.ts'),
-      path.resolve(__dirname, '../assets/StyleSheets/default/bundle.scss')
+      path.resolve(__dirname, '../assets/StyleSheets/default/bundle.sass')
     ]
   },
   resolve: {
