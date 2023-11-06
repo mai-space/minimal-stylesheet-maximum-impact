@@ -4,3 +4,21 @@
 
 .flow > :where(:not(:first-child))
   margin-top: var(--flow-space, 1em)
+
+.grid
+  display: grid
+  gap: 1.5rem
+  grid-template-columns: repeat(12, 1fr)
+  padding: clamp(0.5rem, -0.8889rem + 4.4444vw, 3rem)
+
+  :not(.full-width)
+    grid-column: 2 / 12
+
+  .indent
+    grid-column: 3 / 11
+
+  .indent--large
+    grid-column: 4 / 10
+
+  .full-width
+    grid-column: 1 / 13

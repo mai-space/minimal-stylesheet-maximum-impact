@@ -4,12 +4,43 @@
 body
   font-family: var(--font-family-base)
   font-size: var(--font-size-base)
+  font-weight: var(--font-weight-normal)
   line-height: 1.6
   color: var(--color-text)
   background-color: var(--color-surface)
-  font-weight: normal
   font-style: normal
 
+// All normal text elements
+p
+  --flow-space: 1em
+
+// Quotes
+q
+  font-style: italic
+  --flow-space: 1em
+  &[cite]
+    &:after
+      content: "” (" attr(cite) ") "
+
+// Citations
+cite
+  font-style: italic
+
+// Blockquotes
+blockquote
+  font-style: italic
+  --flow-space: 1em
+  @supports (text-wrap: balance)
+    text-wrap: balance
+
+// Highlights
+mark
+  background-color: var(--color-primary)
+
+strong, b, .bold
+  font-weight: var(--font-weight-bold)
+
+// Headlines
 h1,
 h2,
 h3,
