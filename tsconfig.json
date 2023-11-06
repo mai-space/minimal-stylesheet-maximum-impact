@@ -6,8 +6,11 @@
     "rootDir": "./assets/JavaScripts", // Root directory for your TypeScript source files.
     "strict": true, // Enable strict type checking.
     "esModuleInterop": true, // Allows compatibility between CommonJS and ES modules.
-    "forceConsistentCasingInFileNames": true, // Enforce consistent file casing.
+    "forceConsistentCasingInFileNames": true // Enforce consistent file casing.
   },
   "include": ["assets/JavaScripts/**/*.ts"], // List of TypeScript files to include in compilation.
-  "exclude": ["node_modules"] // Directories to exclude from compilation.
+  "exclude": [
+    "./node_modules"
+  ]
+  // Directories to exclude from compilation.
 }

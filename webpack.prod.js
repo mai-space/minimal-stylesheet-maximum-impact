@@ -1,9 +1,9 @@
 const { merge } = require('webpack-merge');
 
-const base = require('./webpack/base');
-const handlebars = require('./webpack/handlebars');
-const typescript = require('./webpack/typescript');
-const scss = require('./webpack/scss');
+const base = require('./.webpack/base');
+const handlebars = require('./.webpack/handlebars');
+const typescript = require('./.webpack/typescript');
+const scss = require('./.webpack/scss');
 
 const WebpackBar = require('webpackbar');
 

@@ -1,0 +1,42 @@
+$breakpoint-xs: 0
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 992px
+$breakpoint-xl: 1200px
+$breakpoint-xxl: 1400px
+
+@mixin media-breakpoint-xs($direction)
+  @if $direction == 'up'
+    $min: $breakpoint-xs
+    @media (min-width: $min)
+      @content
+  @else if $direction == 'down'
+    $max: $breakpoint-xs
+    @media (max-width: $max)
+      @content
+  @else
+    @error "Invalid direction. Use 'up' or 'down'."
+
+@mixin media-breakpoint-sm($direction)
+  @if $direction == 'up'
+    $min: $breakpoint-sm
+    @media (min-width: $min)
+      @content
+  @else if $direction == 'down'
+    $max: $breakpoint-sm
+    @media (max-width: $max)
+      @content
+  @else
+    @error "Invalid direction. Use 'up' or 'down'."
+
+@mixin media-breakpoint-md($direction)
+  @if $direction == 'up'
+    $min: $breakpoint-md
+    @media (min-width: $min)
+      @content
+  @else if $direction == 'down'
+    $max: $breakpoint-md
+    @media (max-width: $max)
+      @content
+  @else
+    @error "Invalid direction. Use 'up' or 'down'."

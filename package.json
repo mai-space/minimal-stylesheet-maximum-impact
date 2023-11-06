@@ -6,13 +6,13 @@
   "scripts": {
     "build:dev": "webpack serve --config webpack.dev.js --no-stats --mode development",
     "build:production": "webpack --config webpack.prod.js --no-stats --mode production",
-    "build:audit": "webpack --config webpack.check.js --mode production",
-    "scss:check": "stylelint 'assets/StyleSheets/**/*.scss'",
-    "scss:fix": "stylelint 'assets/StyleSheets/**/*.scss' --fix",
+    "build:audit": "webpack --config webpack.check.js --stats --mode production",
+    "sass:check": "stylelint 'assets/StyleSheets/**/*.sass'",
+    "sass:fix": "stylelint 'assets/StyleSheets/**/*.sass' --fix",
     "ts:check": "eslint assets --ext .ts",
     "ts:fix": "eslint --fix assets --ext .ts",
-    "lint:check": "npm-run-all --parallel scss:check ts:check",
-    "lint:fix": "npm-run-all --parallel scss:fix ts:fix"
+    "lint:check": "npm-run-all --parallel sass:check ts:check",
+    "lint:fix": "npm-run-all --parallel sass:fix ts:fix"
   },
   "repository": {
     "type": "git",
@@ -59,6 +59,7 @@
     "style-loader": "^3.3.3",
     "stylelint": "^15.11.0",
     "stylelint-config-recommended-scss": "^13.1.0",
+    "stylelint-config-sass-guidelines": "^10.0.0",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
     "webpack": "^5.89.0",

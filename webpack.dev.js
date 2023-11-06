@@ -1,10 +1,10 @@
 const { merge } = require('webpack-merge');
 const path = require("path");
 
-const base = require('./webpack/base');
-const handlebars = require('./webpack/handlebars');
-const typescript = require('./webpack/typescript');
-const scss = require('./webpack/scss');
+const base = require('./.webpack/base');
+const handlebars = require('./.webpack/handlebars');
+const typescript = require('./.webpack/typescript');
+const scss = require('./.webpack/scss');
 
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const WebpackBar = require('webpackbar');

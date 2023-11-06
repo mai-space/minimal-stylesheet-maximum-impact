@@ -1,14 +1,26 @@
-.wrapper
-  /* width: min(calc(100% - 48px), 55ch); */
-  margin-inline: auto
+// Breakpoints
+$breakpoint-xs: 0
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 992px
+$breakpoint-xl: 1200px
+$breakpoint-xxl: 1400px
 
 .flow > :where(:not(:first-child))
   margin-top: var(--flow-space, 1em)
 
+.flex
+  display: flex
+
+  article
+    flex: 1 1 auto
+  aside
+    flex: 0 0 auto
+
 .grid
   display: grid
-  gap: 1.5rem
-  grid-template-columns: repeat(12, 1fr)
+  gap: var(--grid-gap, 1.5rem)
+  grid-template-columns: repeat(var(--grid-columns, 12), 1fr)
   padding: clamp(0.5rem, -0.8889rem + 4.4444vw, 3rem)
 
   :not(.full-width)
@@ -22,3 +34,18 @@
 
   .full-width
     grid-column: 1 / 13
+
+  .span-30
+    grid-column: span 4
+
+  .span-40
+    grid-column: span 5
+
+  .span-50
+    grid-column: span 6
+
+  .span-60
+    grid-column: span 7
+
+  .span-70
+    grid-column: span 8
