@@ -1,0 +1,36 @@
+<table>
+    <caption>A nice caption for my table</caption>
+    <tr>
+        <th>Name Column</th>
+        <th>Value Column</th>
+    </tr>
+    <tr>
+        <td data-cell="name">Data A.1</td>
+        <td data-cell="value">Data B.1</td>
+    </tr>
+    <tr>
+        <td data-cell="name">Data A.2</td>
+        <td data-cell="value">Data B.2</td>
+    </tr>
+</table>
+<div class="table-container">
+    <table role="table">
+        <caption role="caption">A nice caption for my table</caption>
+        <thead role="rowgroup">
+            <tr role="row">
+                <th role="columnheader">Name Column</th>
+                <th role="columnheader">Value Column</th>
+            </tr>
+        </thead>
+        <tbody role="rowgroup">
+            <tr role="row">
+                <td role="cell" data-cell="name" data-label="Name Column">Data A.1</td>
+                <td role="cell" data-cell="value" data-label="Value Column">Data B.1</td>
+            </tr>
+            <tr role="row">
+                <td role="cell" data-cell="name" data-label="Name Column">Data A.2</td>
+                <td role="cell" data-cell="value" data-label="Value Column">Data B.2</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

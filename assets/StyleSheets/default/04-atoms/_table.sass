@@ -1,0 +1,54 @@
+table
+  background: var(--color-surface)
+  color: var(--color-text)
+  border-collapse: collapse
+  width: 100%
+
+caption
+  background: var(--color-surface)
+  color: var(--color-text)
+  padding: 1rem
+
+th, td
+  padding: 1rem
+  text-align: left
+
+th
+  background: var(--color-surface)
+  color: var(--color-text)
+  font-weight: var(--font-weight-bold)
+
+td
+  background: var(--color-surface)
+  color: var(--color-text)
+
+tr:nth-child(even)
+  // or :nth-of-type(2n)
+  background: var(--color-surface)
+  color: var(--color-text)
+
+@media (max-width: 650px)
+  th
+    display: none
+
+  td
+    display: block
+    padding: 0.5rem 1rem
+    //display: grid
+    //grid-template-columns: 15ch 1fr
+    //gap: 0.5rem
+
+    &:first-child
+      padding-top: 1.5rem
+
+    &:last-child
+      padding-bottom: 1.5rem
+
+    &:before
+      content: attr(data-label) ": "
+      font-weight: var(--fong-weight-bold)
+
+// Bad solution - Nightmare Nightmare Nightmare
+.table-container
+  overflow-x: scroll
+  max-width: 100%
