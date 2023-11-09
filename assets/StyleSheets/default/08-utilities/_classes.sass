@@ -21,3 +21,9 @@
 
 .color-success
   color: var(--color-success)
+
+.full-bleed
+  // override in usage
+  --color-background: #000
+  box-shadow: 0 0 0 100vmax var(--color-background)
+  clip-path: inset(0 -100vmax)
