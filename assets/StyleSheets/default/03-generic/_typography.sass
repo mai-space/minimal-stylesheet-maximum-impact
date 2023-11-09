@@ -5,19 +5,19 @@ body
   font-family: var(--font-family-base)
   font-size: var(--font-size-base)
   font-weight: var(--font-weight-normal)
-  line-height: 1.6
+  line-height: 1.5
   color: var(--color-text)
   background-color: var(--color-surface)
   font-style: normal
 
 // All normal text elements
 p
-  --flow-space: 1em
+  --flow-margin-top: 1.5em
 
 // Quotes
 q
   font-style: italic
-  --flow-space: 1em
+  --flow-margin-top: 1.5em
   &[cite]
     &:after
       content: "” (" attr(cite) ") "
@@ -29,7 +29,7 @@ cite
 // Blockquotes
 blockquote
   font-style: italic
-  --flow-space: 1em
+  --flow-margin-top: 1.4em
   @supports (text-wrap: balance)
     text-wrap: balance
 
@@ -53,36 +53,41 @@ h6
 
 h1
   font-size: var(--font-size-xxxl)
-  --flow-space: 0.7em
+  letter-spacing: -0.02em
+  --flow-margin-top: 1.1em
   @supports (text-wrap: balance)
     text-wrap: balance
 
 h2
   font-size: var(--font-size-xxl)
-  --flow-space: 0.8em
+  letter-spacing: -0.02em
+  --flow-margin-top: 1.1em
   @supports (text-wrap: balance)
     text-wrap: balance
 
 h3
   font-size: var(--font-size-xl)
-  --flow-space: 0.9em
+  letter-spacing: -0.02em
+  --flow-margin-top: 1.2em
   @supports (text-wrap: balance)
     text-wrap: balance
 
 h4
   font-size: var(--font-size-lg)
-  --flow-space: 1em
+  letter-spacing: -0.01em
+  --flow-margin-top: 1.2em
   @supports (text-wrap: balance)
     text-wrap: balance
 
 h5
   font-size: var(--font-size-md)
-  --flow-space: 1.1em
+  letter-spacing: -0.01em
+  --flow-margin-top: 1.2em
   @supports (text-wrap: balance)
     text-wrap: balance
 
 h6
   font-size: var(--font-size-base)
-  --flow-space: 1em
+  --flow-margin-top: 1.2em
   @supports (text-wrap: balance)
     text-wrap: balance
