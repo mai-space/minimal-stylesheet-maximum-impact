@@ -6,46 +6,47 @@ $breakpoint-lg: 992px
 $breakpoint-xl: 1200px
 $breakpoint-xxl: 1400px
 
+// FLUID TYPOGRAPHY
 .flow > :where(:not(:first-child))
   margin-top: var(--flow-space, 1em)
 
+// MAIN GRID
+.grid
+  --gap: clamp(1rem, 6vw, 3rem)
+  --full: minmax(var(--gap), 1fr)
+  --content: minmax(0, 3rem)
+  --indent: min(85ch, 100% - var(--gap) * 2)
+  --popout: minmax(0, 3rem)
+  --feature: minmax(0, 8rem)
+
+  display: grid
+  grid-template-columns: [full-start] var(--full) [feature-start] var(--feature) [popout-start] var(--popout) [content-start] var(--content) [indent-start] var(--indent) [indent-end] var(--content)[content-end] var(--popout) [popout-end] var(--feature) [feature-end] var(--full) [full-end]
+
+.grid > *
+  grid-column: content
+
+.indent
+  grid-column: indent
+
+.popout
+  grid-column: popout
+
+.feature
+  grid-column: feature
+
+.full-width
+  grid-column: full
+
+
+// TODO: FLEX GRIDS
 .flex
   display: flex
+  flex-wrap: wrap
 
   article
-    flex: 1 1 auto
+    flex: 1 1 100%
+    margin: 0 0 1em 0
+
   aside
-    flex: 0 0 auto
-
-.grid
-  display: grid
-  gap: var(--grid-gap, 1.5rem)
-  grid-template-columns: repeat(var(--grid-columns, 12), 1fr)
-  padding: clamp(0.5rem, -0.8889rem + 4.4444vw, 3rem)
-
-  :not(.full-width)
-    grid-column: 2 / 12
-
-  .indent
-    grid-column: 3 / 11
-
-  .indent--large
-    grid-column: 4 / 10
-
-  .full-width
-    grid-column: 1 / 13
-
-  .span-30
-    grid-column: span 4
-
-  .span-40
-    grid-column: span 5
-
-  .span-50
-    grid-column: span 6
-
-  .span-60
-    grid-column: span 7
-
-  .span-70
-    grid-column: span 8
+    flex: 1 1 100%
+    margin: 0 0 1em 0
