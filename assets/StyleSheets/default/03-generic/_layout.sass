@@ -7,11 +7,11 @@ $breakpoint-xl: 1200px
 $breakpoint-xxl: 1400px
 
 // FLUID TYPOGRAPHY
-.flow > :where(:not(:first-child))
+.fluid-typography > :where(:not(:first-child))
   margin-top: var(--flow-margin-top, 1em)
 
-// MAIN GRID
-.grid
+// MAIN GRID WITH INDENTS, POP-OUTS, AND FEATURES
+.main-grid
   --gap: clamp(1rem, 6vw, 3rem)
   --full: minmax(var(--gap), 1fr)
   --content: minmax(0, 3rem)
@@ -22,31 +22,77 @@ $breakpoint-xxl: 1400px
   display: grid
   grid-template-columns: [full-start] var(--full) [feature-start] var(--feature) [popout-start] var(--popout) [content-start] var(--content) [indent-start] var(--indent) [indent-end] var(--content)[content-end] var(--popout) [popout-end] var(--feature) [feature-end] var(--full) [full-end]
 
-.grid > *
-  grid-column: content
+  > *
+    grid-column: content
 
-.indent
-  grid-column: indent
+  .indent
+    grid-column: indent
 
-.popout
-  grid-column: popout
+  .popout
+    grid-column: popout
 
-.feature
-  grid-column: feature
+  .feature
+    grid-column: feature
 
-.full-width
-  grid-column: full
+  .full-width
+    grid-column: full
 
-
-// TODO: FLEX GRIDS
-.flex
+// MAIN WITH SIDEBAR
+.with-sidebar
   display: flex
   flex-wrap: wrap
+  gap: 1rem
 
-  article
-    flex: 1 1 100%
-    margin: 0 0 1em 0
+  > :first-child
+    flex-basis: 75ch
+    flex-grow: 9999
 
-  aside
-    flex: 1 1 100%
-    margin: 0 0 1em 0
+  > :last-child
+    flex-basis: 45ch
+    flex-grow: 1
+
+.reel
+  display: grid
+  gap: 1rem
+  grid-auto-flow: column
+  grid-auto-columns: 20%
+  overflow-x: scroll
+  scroll-snap-type: x mandatory
+
+  > *
+    scroll-snap-align: start
+
+.flex-grid
+  display: flex
+  flex-wrap: wrap
+  gap: 1rem
+  > *
+    flex-grow: 1
+
+.grid
+  display: grid
+  gap: 1rem
+  grid-template-columns: repeat(auto-fit, minmax(min(4rem,100%), 1fr))
+
+.cluster
+  display: flex
+  flex-wrap: wrap
+  gap: 1rem
+
+.card-grid
+  --card-min-width: 32ch
+  display: grid
+  /* we have to be careful with this, it mucks with the tab order */
+  grid-auto-flow: dense
+  gap: 3rem
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--card-min-width)), 1fr))
+  // Rows of a card - could be set to a rem value for images in first row
+  grid-auto-rows: auto auto auto
+
+  > *
+    position: relative
+    grid-row: span 3
+    display: grid
+    grid-template-rows: subgrid
+    gap: 1rem
+    padding: 1rem
