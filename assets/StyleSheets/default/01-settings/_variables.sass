@@ -1,6 +1,7 @@
-\:root
-  /* Colors */
-  /* Source: https://realtimecolors.com or https://coloors.com */
+:root
+  /* ----------------------------- */
+  /* Core Colors (Base Tokens)    */
+  /* ----------------------------- */
   --color-text: #191919
   --color-surface: #F3F3F3
   --color-primary: #78ACBD
@@ -8,36 +9,152 @@
   --color-accent: #B9AB60
   --color-warning: #BD7889
   --color-success: #78BD85
+  --color-info: hsl(208 80% 45%)
+  --color-danger: hsl(4 80% 55%)
 
-  /* Font Families */
-  /* Source: https://fontpair.co */
-  --font-family-base: 'Helvetica Neue LT Pro 55 Roman', Roboto, Arial, sans-serif
-  --font-family-accent: 'Motiva Sans', 'IBM Plex Sans', Arial, sans-serif
+  /* Extended Neutral Tokens */
+  --color-border: rgba(0, 0, 0, 0.15)
+  --color-border-strong: rgba(0, 0, 0, 0.3)
+  --color-shadow: rgba(0, 0, 0, 0.12)
+  --color-disabled: rgba(0, 0, 0, 0.25)
 
-  /* Font Sizes */
-  /* Source: https://type-scale.com/ */
-  --font-size-xs: clamp(0.5625rem, 0.8573rem + -0.3804vw, 0.7813rem)
-  --font-size-sm: clamp(0.7956rem, 0.9868rem + -0.2467vw, 0.9375rem)
-  --font-size-base: clamp(1.125rem, 1.125rem + 0vw, 1.125rem)
-  --font-size-md: clamp(1.35rem, 1.2663rem + 0.4185vw, 1.5906rem)
-  --font-size-lg: clamp(1.62rem, 1.4011rem + 1.0946vw, 2.2494rem)
-  --font-size-xl: clamp(1.9438rem, 1.5135rem + 2.1511vw, 3.1806rem)
-  --font-size-xxl: clamp(2.3325rem, 1.5795rem + 3.7652vw, 4.4975rem)
-  --font-size-xxxl: clamp(2.7994rem, 1.5611rem + 6.1913vw, 6.3594rem)
+  /* ----------------------------- */
+  /* Spacing                      */
+  /* ----------------------------- */
+  --space-2xs: 0.125rem
+  --space-xs: 0.25rem
+  --space-sm: 0.5rem
+  --space-md: 1rem
+  --space-lg: 1.5rem
+  --space-xl: 2rem
+  --space-xxl: 3rem
 
-  --font-weight-normal: 400
-  --font-weight-bold: 700
+  --rel-space-3xs: 0.125em   // ~2px at 16px
+  --rel-space-2xs: 0.25em    // ~4px
+  --rel-space-xs: 0.5em      // ~8px
+  --rel-space-sm: 0.75em     // ~12px
+  --rel-space-md: 1em        // ~16px
+  --rel-space-lg: 1.5em      // ~24px
+  --rel-space-xl: 2em        // ~32px
+  --rel-space-2xl: 3em       // ~48px
+  --rel-space-3xl: 4em       // ~64px
 
-  // Grid
-  --grid-gap: 1.5rem
+  /* Layout Tokens */
+  --layout-gap: var(--space-lg)
+  --layout-section-gap: var(--space-xxl)
+  
+  --layout-radius: 0.5rem
+
+  --layout-breakpoint-xs: 0
+  --layout-breakpoint-sm: 36rem
+  --layout-breakpoint-md: 48rem
+  --layout-breakpoint-lg: 62rem
+  --layout-breakpoint-xl: 75rem
+  --layout-breakpoint-xxl: 87.5rem
+
+  --layout-min-width: var(--layout-breakpoint-md)
+  --layout-max-width: var(--layout-breakpoint-lg)
+  
+  /* Grid */
+  --grid-gap: var(--space-lg)
   --grid-columns: 12
 
+  /* Widths */
+  --text-max-width: 85ch
+  --card-max-width: 40ch
+  --card-min-width: 32ch
+
+  /* ----------------------------- */
+  /* Typography                   */
+  /* ----------------------------- */
+  /* Global Type Tokens */
+
+  --font-scale-ratio: 1.25
+
+  --font-size-base-min: 1rem
+  --font-size-base-max: 1.25rem
+
+  /* MIN scale */
+  --font-size-xs-min: calc(var(--font-size-base-min) / (var(--font-scale-ratio) * var(--font-scale-ratio)))
+  --font-size-sm-min: calc(var(--font-size-base-min) / var(--font-scale-ratio))
+  --font-size-md-min: calc(var(--font-size-base-min) * var(--font-scale-ratio))
+  --font-size-lg-min: calc(var(--font-size-base-min) * var(--font-scale-ratio) * var(--font-scale-ratio))
+  --font-size-xl-min: calc(var(--font-size-base-min) * var(--font-scale-ratio) * var(--font-scale-ratio) * var(--font-scale-ratio))
+
+  /* MAX scale */
+  --font-size-xs-max: calc(var(--font-size-base-max) / (var(--font-scale-ratio) * var(--font-scale-ratio)))
+  --font-size-sm-max: calc(var(--font-size-base-max) / var(--font-scale-ratio))
+  --font-size-md-max: calc(var(--font-size-base-max) * var(--font-scale-ratio))
+  --font-size-lg-max: calc(var(--font-size-base-max) * var(--font-scale-ratio) * var(--font-scale-ratio))
+  --font-size-xl-max: calc(var(--font-size-base-max) * var(--font-scale-ratio) * var(--font-scale-ratio) * var(--font-scale-ratio))
+
+  /* Final fluid font sizes */
+  --font-size-xs: clamp(var(--font-size-xs-min), calc(var(--font-size-xs-min) + (var(--font-size-xs-max) - var(--font-size-xs-min)) * ((100vw - var(--layout-min-width)) / (var(--layout-max-width) - var(--layout-min-width)))), var(--font-size-xs-max))
+  --font-size-sm: clamp(var(--font-size-sm-min), calc(var(--font-size-sm-min) + (var(--font-size-sm-max) - var(--font-size-sm-min)) * ((100vw - var(--layout-min-width)) / (var(--layout-max-width) - var(--layout-min-width)))), var(--font-size-sm-max))
+  --font-size-base: clamp(var(--font-size-base-min), calc(var(--font-size-base-min) + (var(--font-size-base-max) - var(--font-size-base-min)) * ((100vw - var(--layout-min-width)) / (var(--layout-max-width) - var(--layout-min-width)))), var(--font-size-base-max))
+  --font-size-md: clamp(var(--font-size-md-min), calc(var(--font-size-md-min) + (var(--font-size-md-max) - var(--font-size-md-min)) * ((100vw - var(--layout-min-width)) / (var(--layout-max-width) - var(--layout-min-width)))), var(--font-size-md-max))
+  --font-size-lg: clamp(var(--font-size-lg-min), calc(var(--font-size-lg-min) + (var(--font-size-lg-max) - var(--font-size-lg-min)) * ((100vw - var(--layout-min-width)) / (var(--layout-max-width) - var(--layout-min-width)))), var(--font-size-lg-max))
+  --font-size-xl: clamp(var(--font-size-xl-min), calc(var(--font-size-xl-min) + (var(--font-size-xl-max) - var(--font-size-xl-min)) * ((100vw - var(--layout-min-width)) / (var(--layout-max-width) - var(--layout-min-width)))), var(--font-size-xl-max))
+
+
+  /* ----------------------------- */
+  /* Buttons: Global Tokens       */
+  /* ----------------------------- */
+  --btn-font-family: var(--font-family-base)
+  --btn-font-weight: var(--font-weight-medium)
+  --btn-padding-y: var(--space-sm)
+  --btn-padding-x: var(--space-md)
+  --btn-border-radius: 0.375rem
+  --btn-border-width: 2px
+
+  /* ----------------------------- */
+  /* Buttons: Using Core Colors   */
+  /* Derived with color-mix()     */
+  /* ----------------------------- */
+  --btn-bg: var(--color-primary)
+  --btn-bg-hover: color-mix(in srgb, var(--color-primary) 90%, black)
+  --btn-text: white
+  --btn-border: transparent
+
+  /* Secondary Button */
+  --btn-secondary-bg: var(--color-secondary)
+  --btn-secondary-hover: color-mix(in srgb, var(--color-secondary) 90%, black)
+  --btn-secondary-text: white
+
+  /* Outline Button */
+  --btn-outline-bg: transparent
+  --btn-outline-border: var(--color-primary)
+  --btn-outline-text: var(--color-primary)
+  --btn-outline-hover-bg: color-mix(in srgb, var(--color-primary) 12%, transparent)
+
+  /* ----------------------------- */
+  /* Images & Media               */
+  /* ----------------------------- */
+  --img-border-radius: var(--layout-radius)
+  --img-shadow: 0 4px 12px var(--color-shadow)
+  --img-object-fit: cover
+
+  /* Icons */
+  --icon-size-sm: 1rem
+  --icon-size-md: 1.5rem
+  --icon-size-lg: 2rem
+  --icon-color: currentColor
+  --icon-color-muted: rgba(0, 0, 0, 0.5)
+
+
+/* -------------------------------------------------------------- */
+/* Dark Mode                                                      */
+/* -------------------------------------------------------------- */
 @media (prefers-color-scheme: dark)
-  \:root
+  :root
     --color-text: #F3F3F3
     --color-surface: #191919
-    --color-primary: #78ACBD
-    --color-secondary: #9678BD
-    --color-accent: #B9AB60
-    --color-warning: #BD7889
-    --color-success: #78BD85
+    --color-border: rgba(255,255,255,0.15)
+    --color-border-strong: rgba(255,255,255,0.35)
+    --color-shadow: rgba(0, 0, 0, 0.6)
+    --color-disabled: rgba(255,255,255,0.3)
+
+    /* Buttons derive from same system */
+    --btn-bg-hover: color-mix(in srgb, var(--color-primary) 85%, white)
+    --btn-secondary-hover: color-mix(in srgb, var(--color-secondary) 85%, white)
+    --btn-outline-hover-bg: color-mix(in srgb, var(--color-primary) 20%, transparent)
