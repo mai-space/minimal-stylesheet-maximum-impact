@@ -2,20 +2,25 @@
 // Identifies and styles external links with icon indicator
 
 // External links (https or http)
+// Note: To exclude same-domain links, use a class or data attribute instead
 a[href^="https://"], a[href^="http://"]
-  &:not([href*="#{location.hostname}"])
-    &::after
-      content: "↗"
-      display: inline-block
-      margin-left: var(--space-xs)
-      font-size: 0.85em
-      vertical-align: super
-      line-height: 0
-      color: currentColor
-      transition: transform 0.2s ease-in-out
+  &::after
+    content: "↗"
+    display: inline-block
+    margin-left: var(--space-xs)
+    font-size: 0.85em
+    vertical-align: super
+    line-height: 0
+    color: currentColor
+    transition: transform 0.2s ease-in-out
 
-    &:hover::after
-      transform: translate(2px, -2px)
+  &:hover::after
+    transform: translate(2px, -2px)
+
+// Internal links can remove the icon with class
+a[href^="https://"].internal-link, a[href^="http://"].internal-link
+  &::after
+    content: none
 
 // External links with specific patterns
 a[href^="mailto:"]
