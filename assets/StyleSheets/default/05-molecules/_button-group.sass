@@ -1,0 +1,35 @@
+// Button Group Molecule
+// Groups multiple buttons together
+
+.button-group
+  display: flex
+  flex-wrap: wrap
+  gap: var(--space-sm)
+  align-items: center
+
+  &.button-group-vertical
+    flex-direction: column
+    align-items: stretch
+
+    button, .button
+      width: 100%
+
+// Attached button group (no gaps)
+.button-group-attached
+  display: inline-flex
+
+  button, .button
+    border-radius: 0
+    margin-left: -1px
+
+    &:first-child
+      border-top-left-radius: var(--btn-border-radius)
+      border-bottom-left-radius: var(--btn-border-radius)
+      margin-left: 0
+
+    &:last-child
+      border-top-right-radius: var(--btn-border-radius)
+      border-bottom-right-radius: var(--btn-border-radius)
+
+    &:focus, &:hover
+      z-index: 1

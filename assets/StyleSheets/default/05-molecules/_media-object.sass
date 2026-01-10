@@ -1,0 +1,45 @@
+// Media Object Molecule
+// Image + text content combination pattern
+
+.media-object
+  display: flex
+  gap: var(--space-md)
+  align-items: flex-start
+
+  &.media-object-center
+    align-items: center
+
+  &.media-object-end
+    align-items: flex-end
+
+// Media object parts
+.media-object-image
+  flex-shrink: 0
+  max-width: 150px
+
+  img
+    width: 100%
+    height: auto
+    display: block
+
+.media-object-content
+  flex: 1
+  min-width: 0
+
+  > :first-child
+    margin-top: 0
+
+  > :last-child
+    margin-bottom: 0
+
+// Reverse layout
+.media-object-reverse
+  flex-direction: row-reverse
+
+// Responsive stacking
+@media (width <= var(--layout-breakpoint-sm))
+  .media-object
+    flex-direction: column
+
+  .media-object-image
+    max-width: 100%
