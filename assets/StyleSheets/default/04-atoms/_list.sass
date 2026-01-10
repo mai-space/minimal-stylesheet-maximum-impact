@@ -1,0 +1,65 @@
+// List Atom
+// Base list styles following atomic design principles
+
+ul, ol
+  padding-left: var(--space-xl)
+  margin: 0
+
+  li
+    margin-bottom: var(--space-sm)
+    line-height: 1.6
+
+    &:last-child
+      margin-bottom: 0
+
+// Nested lists
+ul ul, ol ol, ul ol, ol ul
+  margin-top: var(--space-sm)
+  margin-bottom: 0
+
+// Description lists
+dl
+  margin: 0
+
+dt
+  font-weight: var(--font-weight-bold)
+  margin-bottom: var(--space-xs)
+
+dd
+  margin-left: var(--space-xl)
+  margin-bottom: var(--space-md)
+
+  &:last-child
+    margin-bottom: 0
+
+// Unstyled list
+.list-unstyled
+  padding-left: 0
+  list-style: none
+
+  li
+    margin-bottom: var(--space-sm)
+
+// Inline list
+.list-inline
+  padding-left: 0
+  list-style: none
+  display: flex
+  flex-wrap: wrap
+  gap: var(--space-md)
+
+  li
+    margin-bottom: 0
+
+// List with custom markers
+.list-check li::marker
+  content: "✓ "
+  color: var(--color-success)
+
+.list-arrow li::marker
+  content: "→ "
+  color: var(--color-primary)
+
+.list-bullet li::marker
+  content: "• "
+  color: var(--color-primary)

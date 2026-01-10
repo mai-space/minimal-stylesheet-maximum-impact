@@ -1,0 +1,42 @@
+// External Link Molecule
+// Identifies and styles external links with icon indicator
+
+// External links (https or http)
+a[href^="https://"], a[href^="http://"]
+  &:not([href*="#{location.hostname}"])
+    &::after
+      content: "↗"
+      display: inline-block
+      margin-left: var(--space-xs)
+      font-size: 0.85em
+      vertical-align: super
+      line-height: 0
+      color: currentColor
+      transition: transform 0.2s ease-in-out
+
+    &:hover::after
+      transform: translate(2px, -2px)
+
+// External links with specific patterns
+a[href^="mailto:"]
+  &::before
+    content: "✉ "
+    display: inline-block
+    margin-right: var(--space-xs)
+    color: currentColor
+
+a[href^="tel:"]
+  &::before
+    content: "☎ "
+    display: inline-block
+    margin-right: var(--space-xs)
+    color: currentColor
+
+// Download links
+a[download], a[href$=".pdf"], a[href$=".doc"], a[href$=".docx"], a[href$=".zip"]
+  &::after
+    content: "⬇"
+    display: inline-block
+    margin-left: var(--space-xs)
+    font-size: 0.85em
+    color: currentColor

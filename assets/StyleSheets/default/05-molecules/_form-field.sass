@@ -1,0 +1,64 @@
+// Form Field Molecule
+// Label + input combination pattern
+
+.form-field
+  display: flex
+  flex-direction: column
+  gap: var(--space-xs)
+  margin-bottom: var(--space-md)
+
+label
+  font-weight: var(--font-weight-medium)
+  color: var(--color-text)
+  font-size: var(--font-size-sm)
+  display: block
+
+input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="tel"], input[type="url"], input[type="number"], input[type="date"], input[type="time"], input[type="datetime-local"], textarea, select
+  width: 100%
+  padding: var(--space-sm) var(--space-md)
+  font-size: var(--font-size-base)
+  line-height: 1.5
+  color: var(--color-text)
+  background-color: var(--color-surface)
+  border: 2px solid var(--color-border)
+  border-radius: var(--layout-radius)
+  transition: border-color 0.15s ease-in-out
+
+  &:focus
+    outline: none
+    border-color: var(--color-primary)
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 15%, transparent)
+
+  &:disabled
+    opacity: 0.6
+    cursor: not-allowed
+    background-color: var(--color-disabled)
+
+  &::placeholder
+    color: var(--color-disabled)
+    opacity: 0.7
+
+textarea
+  min-height: 100px
+  resize: vertical
+
+// Checkbox and radio
+input[type="checkbox"], input[type="radio"]
+  width: auto
+  margin-right: var(--space-xs)
+  cursor: pointer
+
+// Form field with error
+.form-field-error input, .form-field-error textarea, .form-field-error select
+  border-color: var(--color-danger)
+
+.form-field-error-message
+  color: var(--color-danger)
+  font-size: var(--font-size-sm)
+  margin-top: var(--space-xs)
+
+// Helper text
+.form-field-help
+  font-size: var(--font-size-sm)
+  color: var(--color-text)
+  opacity: 0.7
