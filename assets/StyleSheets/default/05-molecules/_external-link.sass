@@ -1,8 +1,9 @@
 // External Link Molecule
 // Identifies and styles external links with icon indicator
+// Note: All external links (https/http) get an icon by default
+// To remove the icon from same-domain links, add class="internal-link"
 
 // External links (https or http)
-// Note: To exclude same-domain links, use a class or data attribute instead
 a[href^="https://"], a[href^="http://"]
   &::after
     content: "↗"
